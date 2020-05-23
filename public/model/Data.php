@@ -1,16 +1,26 @@
 <?php
-// define aonde vai gravar as informaçoes
-
+/**
+ * Classe para salvar e ler os dados em disco
+ */
 class Data
 {
-    public static function load($fileName)
+    public function load($filename)
     {
-        // usar file_exist e require
+        $path = $this->getFilename($filename);
+        if (file_exists($path)) {
+            return require $path;
+        }
+        return [];
     }
 
-    public static function save($data, $fileName)
+    public function save($fileName, $data)
     {
-        // usar var_export e file_put_contents ( string $filename , mixed $data [, int $flags = 0 [, resource $context ]] ) : int
+        file_put_contents($this->getFilename($fileName), '<'. '?php return ' . var_export($data, true) . ';');
+    }
+
+    public function getFilename($filename)
+    {
+        return __DIR__ . "/data-$filename.php";
     }
 
 }
