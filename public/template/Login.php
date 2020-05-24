@@ -30,7 +30,7 @@ $login = $_REQUEST['login'];
                     <hr/>
                     <div class="card-text">
                         <form action="conteudo-jogo.html" id="formLogin" style="margin:15px">
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <label>Email:</label>
                                 <input type="email" class="form-control" id="loginEmail"
                                        placeholder="Digite aqui seu email">
@@ -48,7 +48,22 @@ $login = $_REQUEST['login'];
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-block btn-primary" id="btnLogin">Login</button>
-                        </form>
+                            <div id="form_login">
+                            </form>-->
+                                <?php echo validation_errors(); ?>
+                                <?php
+                                echo form_open();
+
+                                echo form_label('Email', 'loginEmail');
+                                echo form_input('loginEmail', '');
+
+                                echo form_label('Senha', 'loginSenha');
+                                echo form_password('loginSenha', '');
+
+                                echo form_submit('submit', 'Login');
+                                ?>
+                                <?php form_close(); ?>
+
                     </div>
                 </div>
                 <div class="card-footer text-center">
