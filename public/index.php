@@ -1,9 +1,11 @@
 <?php
 // define qual o controller e action
 
+session_start();
+
 $controller = $_GET['controller'];
 $action = $_GET['action'];
-$login = new Login();
+$login = new LoginController();
 if (!$login->estaLogado) {
     // redirect para o login.html
     $controller = 'Login';
