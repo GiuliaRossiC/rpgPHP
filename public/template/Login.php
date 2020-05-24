@@ -1,5 +1,6 @@
 <?php
 $login = $_REQUEST['login'];
+//post login
 ?>;
 
 <html>
