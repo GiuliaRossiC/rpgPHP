@@ -3,7 +3,7 @@
 
 class Login
 {
-    public static function estaLogado()
+    public function estaLogado()
     {
         // verificar $_SESSION['usuario']
         if(isset($_SESSION['usuario'])){
@@ -12,23 +12,23 @@ class Login
         return false;
     }
 
-    public static function login($email, $senha)
+    public function validarlogin($email, $senha)
     {
-        $usuario = Usuario::verificarLogin($email, $senha);
-        if(is_null($usuario)){
-            header('Location: cadastro.php');
+        $u = new Usuario();
+        $usuario = $u->verificarLogin($email, $senha);
+        if($usuario == false){
+            return false;
         }else{
-            session_start();
             $_SESSION['usuario'] = $usuario;
+
             header('Location: servico.php');
         }
         // usar Usuario::LoginValido e gravar $_SESSION['usuario']
     }
 
-    public static function logout()
+    public function logout()
     {
         // apagar o $_SESSION['usuario']
-        session_start();
         unset($_SESSION['usuario']);
     }
 
