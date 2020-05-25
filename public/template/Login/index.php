@@ -59,15 +59,15 @@
                     <h1 class="card-title text-center">Iniciar Sessão</h1>
                     <hr/>
                     <div class="card-text">
-                        <form method="post" action="/index.php?controller=login&action=login" id="formLogin" style="margin:15px">
+                        <form method="post" action="/index.php?controller=login&action=index" id="formLogin" style="margin:15px">
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="text" class="form-control" id="email"
+                                <input type="text" class="form-control" id="email" name="email"
                                        placeholder="Digite aqui seu email">
                                                             </div>
                             <div class="form-group">
                                 <label for="senha">Senha:</label>
-                                <input type="password" class="form-control" id="senha" placeholder="Senha">
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
                             </div>
                             <button type="submit" class="btn btn-block btn-primary" id="btnLogin">Login</button>
                         </form>
@@ -132,174 +132,5 @@
             00.000.000/0000-00 - São Paulo/SP - Brasil</p>
     </div>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
-<script>
-    let formCadastro, formLogin;
-    (function () {
-            formCadastro = document.getElementById("formCadastro");
-            if (formCadastro) {
-                formCadastro.addEventListener("submit", function (event) {
-                    if (!cadastroClick()) {
-                        event.preventDefault();
-                    } /*else {
-                    const infoCadastro = "Dados corretos! <br> Dados Informados: <br><br>"
-                        + "usuário: " + document.getElementById("InputUser").value + "<br>"
-                        + "email: " + document.getElementById("InputEmailCadastro").value + "<br>"
-                        + "senha: " + document.getElementById("InputSenhaCadastro").value + "<br>"
-                        + "data de nascimento: " + document.getElementById("inputNascimento").value + "<br>"
-                        + "sexo: " + document.getElementById("inputNascimento").value + "<br>"
-                        + "estado civil: " + document.getElementById("inputEstadoCivil").value + "<br>"
-                        + "telefone residencial: " + document.getElementById("inputTelefoneRes").value + "<br>"
-                        + "telefone celular: " + document.getElementById("inputTelefoneCelular").value + "<br>"
-                        + "endereço: " + document.getElementById("inputEndereco").value;
-
-                    document.getElementById("dumpCadastro").innerHTML = infoCadastro;
-                    setTimeout(function () {
-                       // document.location = formCadastro.action;
-                    }, 10000);
-        }*/
-                });
-            }
-            formLogin = document.getElementById("formLogin");
-            if (formLogin) {
-                formLogin.addEventListener("submit", function (event) {
-                    if (!loginClick()) {
-                        event.preventDefault();
-                    } /*else {
-                event.preventDefault();
-                const infoLogin = "Dados corretos! <br> Dados informados: <br><br> email: " +
-                    document.getElementById("loginEmail").value +
-                    "<br> senha: " + document.getElementById("loginSenha").value;
-
-                document.getElementById("dumpLogin").innerHTML = infoLogin;
-                setTimeout(function () {
-                    document.location = formLogin.action;
-                }, 3000);
-            }*/
-                });
-            }
-        }
-    )
-    ();
-
-    function loginClick(event) {
-        var email = document.getElementById("loginEmail").value;
-        var senha = document.getElementById("loginSenha").value;
-        var valid = true;
-
-        if (email === "") {
-            var x = document.getElementById("invalidEmailLogin");
-            x.style.display = 'block';
-            valid = false;
-        }
-        if (senha === "") {
-            var x = document.getElementById("invalidSenhaLogin");
-            x.style.display = 'block';
-            valid = false;
-        }
-        return valid;
-    }
-
-    function cadastroClick(event) {
-        $('#userInvalido').hide();
-        $('#emailInvalido').hide();
-        $('#confirmaEmailInvalido').hide();
-        $('#senhaInvalido').hide();
-        $('#confirmaSenha').hide();
-        $('#dataInvalido').hide();
-        $('#sexoInvalido').hide();
-        $('#civilInvalido').hide();
-        $('#residencialInvalido').hide();
-        $('#celInvalido').hide();
-        $('#endInvalido').hide();
-        $('#ckeckInvalido').hide();
-        var nome = document.getElementById("InputUser").value;
-        var email = document.getElementById("InputEmailCadastro").value;
-        var confirmaEmail = document.getElementById("InputConfirmaEmail").value;
-        var senha = document.getElementById("InputSenhaCadastro").value;
-        var confirmaSenha = document.getElementById("inputConfirmaSenha").value;
-        var nasci = document.getElementById("inputNascimento").value;
-        var estadoCivil = document.getElementById("inputEstadoCivil").value;
-        var telResidencial = document.getElementById("inputTelefoneRes").value;
-        var telCel = document.getElementById("inputTelefoneCelular").value;
-        var end = document.getElementById("inputEndereco").value;
-        var eValido = true;
-
-        if (nome === "") {
-            $('#userInvalido').show();
-            eValido = false;
-        }
-        if (email === "") {
-            $('#emailInvalido').show();
-            eValido = false;
-        }
-        if(confirmaEmail === ""){
-            $('#confirmaEmailInvalido').show();
-            eValido = false;
-        }
-        if (senha === "") {
-            $('#senhaInvalido').show();
-            eValido = false;
-        }
-        if (confirmaSenha === "") {
-            $('#confirmaSenha').show();
-            eValido = false;
-        }
-        if (nasci === "") {
-            $('#dataInvalido').show();
-            eValido = false;
-        }
-
-        if ((document.getElementById("sexoM").checked || document.getElementById("sexoF").checked) === false) {
-            $('#sexoInvalido').show();
-            eValido = false;
-        }
-
-        if (document.getElementById("inputEstadoCivil").querySelector("option:checked").text === "") {
-            $('#civilInvalido').show();
-            eValido = false;
-        }
-
-        if (telResidencial === "") {
-            $('#residencialInvalido').show();
-            eValido = false;
-        }
-
-        if (telCel === "") {
-            $('#celInvalido').show();
-            eValido = false;
-        }
-
-        if (end === "") {
-            $('#endInvalido').show();
-            eValido = false;
-        }
-
-        if (document.getElementById("aceitaCadastro").checked === false) {
-            $('#ckeckInvalido').show();
-            eValido = false;
-        }
-        if (confirmaSenha !== senha) {
-            $('#confirmaSenha').show();
-            eValido = false;
-        }
-        if (confirmaEmail !== email) {
-            $('#confirmaEmailInvalido').show();
-            eValido = false;
-        }
-        return eValido;
-    }
-</script>
-<!--TODOS OS SCRIPTS ESTÃO DENTRO DA PAGINA HTML _SCRIPTS.HTML, SENDO IMPORTADOS COM SASS!!!!!-->
 </body>
 </html>

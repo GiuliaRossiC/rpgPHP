@@ -1,49 +1,45 @@
-<form name="" method="post" action="">
-    <label>Usuário: <input type="text" name="user"/></label><br/><br/>
-    <label>Senha: <input type="password" name="pass"/></label><br/><br/>
-    <input type="submit" name="submit" value="Logar!"/>
-</form>
-
-//isso tem q ficar na view
-
 <?php
+require_once 'Data.php';
 
 class Usuario
 {
 
-
-    public function usuarios()
+    public function verificaLogin($email, $senha)
     {
-        echo 'Usuários';
-
-
-        $user = @$_REQUEST['user'];
-        $pass = @$_REQUEST['pass'];
-        $submit = @$_REQUEST['submit'];
-// a controller tem q enviar o request
-
-        $user1 = 'Nancy';
-        $pass1 = 'nancy123';
-
-        $user2 = 'Caio';
-        $pass2 = 'caio123';
-// isso tem que puxar do data
-
-        if ($submit) {
-
-            if ($user == "" || $pass == "") {
-                echo "<script:alert('Por favor, preencha todos os campos!');</script>";
-            } else {
-                if (($user == $user1 && $pass == $pass1) || ($user == $user2 && $pass == $pass2)) {
-                    session_start();
-                    $_SESSION['usuario'] = $user;
-                    $_SESSION['senha'] = $pass;
-                    header("Location: painel.php");
-                } else {
-                    echo "<script>alert('Usuário e/ou senha inválido(s), Tente novamente!');</script>";
-                }
-            }
-
+        $data = new Data('usuario');
+        $usuario = $data->get($email);
+        if (empty($usuario)) {
+            return false;
+        } elseif ($usuario['senha'] !== $senha) {
+            return false;
+        } else {
+            return $usuario;
         }
+    }
+
+    public function create($set)
+    {
+        // validar se está tudo certo
+        // ex isset($set['nome])
+
+        $data = new Data('usuario');
+        $data->save($set['email'], $set);
+    }
+
+    public function save($email, $senha)
+    {
+        // usar data::load(usuario) verificar se existe e usar data::save(usuario)
+        // $data = new data;
+        // $data-> save(usuario);
+        $data = new Data('usuario');
+        $usuario = $data->get($email);
+
+        if (!empty($usuario)) {
+            return false;
+        } else {
+            $data->save($email, $senha);
+            return $email;
+        }
+
     }
 }
