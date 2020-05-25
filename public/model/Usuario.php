@@ -1,23 +1,48 @@
+<form name="" method="post" action="">
+    <label>Usuário: <input type="text" name="user"/></label><br/><br/>
+    <label>Senha: <input type="password" name="pass"/></label><br/><br/>
+    <input type="submit" name="submit" value="Logar!"/>
+</form>
+
+//isso tem q ficar na view
+
 <?php
+
 class Usuario
 {
 
 
-    public function verifUsuarios()
+    public function usuarios()
     {
+        echo 'Usuários';
+
+
+        $user = @$_REQUEST['user'];
+        $pass = @$_REQUEST['pass'];
+        $submit = @$_REQUEST['submit'];
+// a controller tem q enviar o request
+
+        $user1 = 'Nancy';
+        $pass1 = 'nancy123';
+
+        $user2 = 'Caio';
+        $pass2 = 'caio123';
+// isso tem que puxar do data
 
         if ($submit) {
-            $data = new Data();
-            $usuarios = $data->load('usuario');
 
-            if (!isset($usuarios[$email])) {
-                return false;
-            } elseif ($usuarios[$email] !== $senha) {
-                return false;
+            if ($user == "" || $pass == "") {
+                echo "<script:alert('Por favor, preencha todos os campos!');</script>";
             } else {
-                return $usuarios[$email];
+                if (($user == $user1 && $pass == $pass1) || ($user == $user2 && $pass == $pass2)) {
+                    session_start();
+                    $_SESSION['usuario'] = $user;
+                    $_SESSION['senha'] = $pass;
+                    header("Location: painel.php");
+                } else {
+                    echo "<script>alert('Usuário e/ou senha inválido(s), Tente novamente!');</script>";
+                }
             }
-
 
         }
     }

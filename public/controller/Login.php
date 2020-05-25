@@ -1,9 +1,0 @@
-<?php
-
-//login
-class Login
-{
-
-}
-
-?>
