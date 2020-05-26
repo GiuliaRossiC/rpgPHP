@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php?controller=servico&action=index">
                 <img src="img/logo_rpg.png" class="img-fluid" width="60" height="45">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.php?controller=servico&action=index">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sobre.html">O Jogo</a>
@@ -37,10 +37,10 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="cadastro.html">Cadastre-se agora!</a>
+                        <a id="lblSessao" class="nav-link" href="index.php?controler=login&action=cadastro">Cadastre-se agora!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="iniciar-sessao.html">Iniciar Sessão</a>
+                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
                     </li>
                 </ul>
             </div>
@@ -104,7 +104,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3">
-                <a href="index.html">
+                <a href="index.php?controller=servico&action=index">
                     <img class="mb-2 img-fluid" src="img/logo_rpg.png" alt="" width="40%"></a>
             </div>
             <div class="col-12 col-md-2">
@@ -146,6 +146,5 @@
             00.000.000/0000-00 - São Paulo/SP - Brasil</p>
     </div>
 </footer>
-
 </body>
 </html>

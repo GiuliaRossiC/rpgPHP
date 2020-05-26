@@ -1327,6 +1327,10 @@ body, html {
   max-width: 420px;
   margin: auto; }
 
+.login-cardServico {
+  width: 100%;
+  margin: auto; }
+
 .tab-pane a {
   color: black;
   text-decoration: none; }

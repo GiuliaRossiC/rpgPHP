@@ -1,20 +1,32 @@
 <?php return array (
-  'asdasd' => 
+  'sintaxe' => 
   array (
-    'codigo' => 'asdasd',
-    'missao' => 'sadasd d d d',
+    'codigo' => 'sintaxe',
+    'missao' => 'aprender sintaxe',
     'materia' => 'portugues',
   ),
-  'sad sa' => 
+  'onomatopeia' => 
   array (
-    'codigo' => 'sad sa',
-    'missao' => 'sadasd',
+    'codigo' => 'onomatopeia',
+    'missao' => 'aprender onomatopeia',
     'materia' => 'portugues',
   ),
-  123 => 
+  'fibonacci' => 
   array (
-    'codigo' => '123',
-    'missao' => '123',
-    'materia' => 'portugues',
+    'codigo' => 'fibonacci',
+    'missao' => 'aprender fibonacci',
+    'materia' => 'matematica',
+  ),
+  'numerosprimos' => 
+  array (
+    'codigo' => 'numerosprimos',
+    'missao' => 'aprender numeros primos',
+    'materia' => 'matematica',
+  ),
+  'mmc' => 
+  array (
+    'codigo' => 'mmc',
+    'missao' => 'aprender mmc',
+    'materia' => 'matematica',
   ),
 );

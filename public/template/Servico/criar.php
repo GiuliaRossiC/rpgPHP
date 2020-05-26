@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Iniciar sessão</title>
+    <title>Criar Nova Missão</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/main.css">
@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php?controller=servico&action=index">
                 <img src="img/logo_rpg.png" class="img-fluid" width="60" height="45">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -30,9 +30,9 @@
             <div>
                 <h4 class="text-center" id="dumpLogin"></h4>
             </div>
-            <div class="login-card card my-5 shadow-sm">
+            <div class="login-cardServico card my-5 shadow-sm">
                 <div class="card-body">
-                    <h1 class="card-title text-center">Alterar</h1>
+                    <h1 class="card-title text-center">Criar nova missão</h1>
                     <hr/>
                     <div class="card-text">
                         <form action="index.php?controller=servico&action=criar" method="Post">

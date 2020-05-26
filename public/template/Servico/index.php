@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Iniciar sessão</title>
+    <title>Suas Missões</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/main.css">
@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php?controller=servico&action=index">
                 <img src="img/logo_rpg.png" class="img-fluid" width="60" height="45">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -30,7 +30,7 @@
             <div>
                 <h4 class="text-center" id="dumpLogin"></h4>
             </div>
-            <div class="login-card card my-5 shadow-sm">
+            <div class="login-cardServico card my-5 shadow-sm">
                 <div class="card-body">
                     <h1 class="card-title text-center">Missões</h1>
                     <hr/>
@@ -47,14 +47,18 @@
                                 <tbody>
                                 <?php foreach ($data as $missao): ?>
                                     <tr>
-                                        <td><?=$missao['codigo']?></td>
-                                        <td><?=$missao['missao']?></td>
-                                        <td><?=$missao['materia']?></td>
+                                        <td><?= $missao['codigo'] ?></td>
+                                        <td><?= $missao['missao'] ?></td>
+                                        <td><?= $missao['materia'] ?></td>
                                         <td>
-                                            <a href="index.php?controller=servico&action=alterar&codigo=<?=$missao['codigo']?>"
-                                               class="btn btn-primary">alterar</a>
-                                            <a href="index.php?controller=servico&action=apagar&codigo=<?=$missao['codigo']?>"
-                                            class="btn btn-primary">apagar</a>
+                                            <p>
+                                                <a href="index.php?controller=servico&action=alterar&codigo=<?= $missao['codigo'] ?>"
+                                                   class="btn btn-primary">alterar</a>
+                                            </p>
+                                            <p>
+                                                <a href="index.php?controller=servico&action=apagar&codigo=<?= $missao['codigo'] ?>"
+                                                   class="btn btn-primary">apagar</a>
+                                            </p>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -78,7 +82,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3">
-                <a href="index.html">
+                <a href="index.php?controller=servico&action=index">
                     <img class="mb-2 img-fluid" src="img/logo_rpg.png" alt="" width="40%"></a>
             </div>
             <div class="col-12 col-md-2">
