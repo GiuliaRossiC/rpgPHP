@@ -51,8 +51,9 @@ class UsuarioController
             if(empty($_POST['actCadastro'])){
                 $temErro['actCadastro'] = "Você deve aceitar os termos.";
             }
+
             if (empty($temErro)) {
-                $usuarios->save($_POST['codigo'], $_POST);
+                $usuarios->save($_POST['email'], $_POST);
                 header("Location:$redirect");
             }
             return $temErro;

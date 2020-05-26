@@ -14,7 +14,7 @@ class LoginController
                 // redirect para o index controler
                 header('Location: index.php?controller=servico&action=index');
             } else {
-                echo '<span style="color: red; margin-left: 20px">'.'seu email ou sua senha estão incorretas!'.'</span>';
+                return ['erro'=>'seu email ou sua senha estão incorretas!'];
             }
         }
     }
@@ -23,6 +23,7 @@ class LoginController
         $login->sair();
         header('Location: index.php?controller=login&action=index');
     }
+
     public function cadastro(){
         $cadastro = new UsuarioController();
         return $cadastro->criar('index.php?controller=login&action=index');

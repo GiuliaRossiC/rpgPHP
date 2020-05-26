@@ -20,4 +20,19 @@
     'endereco' => 'Rua do Humaitá 109',
     'actCadastro' => 'on',
   ),
+  'shh.smirnov@gmail.com' => 
+  array (
+    'usuario' => 'giulia',
+    'email' => 'shh.smirnov@gmail.com',
+    'confirmarEmail' => 'shh.smirnov@gmail.com',
+    'senha' => 'asd',
+    'confirmarSenha' => 'asd',
+    'dataNascimento' => '0012-12-12',
+    'sexo' => 'masculino',
+    'estadoCivil' => 'casado',
+    'telefoneResidencial' => '21968572729',
+    'telefoneCelular' => '21968572729',
+    'endereco' => 'Rua do Humaitá 109',
+    'actCadastro' => 'on',
+  ),
 );
