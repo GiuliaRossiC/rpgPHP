@@ -17,7 +17,7 @@ class Usuario
         }
     }
 
-    public function create($set)
+    public function criar($set)
     {
         // validar se está tudo certo
         // ex isset($set['nome])
@@ -41,5 +41,11 @@ class Usuario
             return $email;
         }
 
+    }
+
+    public function todos()
+    {
+        $data = new Data('usuario');
+        return $data->load();
     }
 }

@@ -14,10 +14,14 @@ class LoginController
                 // redirect para o index controler
                 header('Location: index.php?controller=servico&action=index');
             } else {
-                // exibe o form com o erro
-                echo "erro no form";
+                echo "seu email ou sua senha estão incorretas!";
             }
         }
+    }
+    public function sair(){
+        $login = new Login();
+        $login->sair();
+        header('Location: index.php?controller=login&action=index');
     }
 }
 

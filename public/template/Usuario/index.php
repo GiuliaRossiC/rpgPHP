@@ -2,20 +2,20 @@
     <table>
         <thead>
         <tr>
-            <th>codigo</th>
-            <th>missao</th>
-            <th>materia</th>
+            <th>nome</th>
+            <th>email</th>
+            <th>senha</th>
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($data as $missao): ?>
+        <?php foreach ($data as $usuario): ?>
             <tr>
-                <td><?=$missao['codigo']?></td>
-                <td><?=$missao['missao']?></td>
-                <td><?=$missao['materia']?></td>
+                <td><?=$usuario['usuario']?></td>
+                <td><?=$usuario['email']?></td>
+                <td><?=$usuario['senha']?></td>
                 <td>
-                    <a href="index.php?controller=servico&action=alterar&codigo=<?=$missao['codigo']?>">alterar</a>
-                    <a href="index.php?controller=servico&action=apagar&codigo=<?=$missao['codigo']?>">apagar</a>
+                    <a href="index.php?controller=usuario&action=alterar&email=<?=$usuario['email']?>">alterar</a>
+                    <a href="index.php?controller=usuario&action=apagar&email=<?=$usuario['email']?>">apagar</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -24,5 +24,5 @@
 <?php else: ?>
 <?php endif ?>
 
-<a href="index.php?controller=servico&action=criar">nova missao</a>
+<a href="index.php?controller=usuario&action=criar">novo usuario</a>
 

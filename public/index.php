@@ -5,13 +5,14 @@ session_start();
 require 'model/Login.php';
 require 'view.php';
 
-$controller = isset($_GET['controller']) ? $_GET['controller'] : 'Login';
+$controller = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Login';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $login = new Login();
-if (!$login->estaLogado()) {
+if (!$login->estaLogado() && $controller!='Login') {
     // redirect para o login.html
     $controller = 'Login';
     $action = 'index';
+    echo "Acesso não autorizado";
 }
 
 $controllerName = "{$controller}Controller";

@@ -24,10 +24,11 @@ class Login
         return $usuario;
     }
 
-    public function logout()
+    public function sair()
     {
         // apagar o $_SESSION['usuario']
         unset($_SESSION['usuario']);
     }
+
 
 }

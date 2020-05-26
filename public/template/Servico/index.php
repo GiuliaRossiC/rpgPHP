@@ -25,4 +25,5 @@
 <?php endif ?>
 
 <a href="index.php?controller=servico&action=criar">nova missao</a>
+<a href="index.php?controller=login&action=sair">Logout</a>
 
