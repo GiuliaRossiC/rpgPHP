@@ -11,4 +11,10 @@
     'missao' => 'sadasd',
     'materia' => 'portugues',
   ),
+  123 => 
+  array (
+    'codigo' => '123',
+    'missao' => '123',
+    'materia' => 'portugues',
+  ),
 );

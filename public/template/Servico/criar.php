@@ -20,30 +20,6 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">O Jogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sobre_nos.html">A Empresa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mini-currilo.html">Nossa equipe</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav  navbar-right">
-                    <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="cadastro.html">Cadastre-se agora!</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="iniciar-sessao.html">Iniciar Sessão</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
 </header>
@@ -98,12 +74,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3">
-                <a href="index.html">
                     <img class="mb-2 img-fluid" src="img/logo_rpg.png" alt="" width="40%"></a>
             </div>
             <div class="col-12 col-md-2">
                 <h5>Sobre a School Hero</h5>
-                <p>Quer saber mais sobre o jogo?<a class="text-decoration-none" href="sobre.html">
                         <i>Clica aqui!</i></a>
                 </p>
             </div>
@@ -112,12 +86,10 @@
                 <p>
                     Para saber mais sobre nossa empresa?
                     <br>
-                    <a class="text-decoration-none" href="sobre_nos.html"><i>Clica aqui!</i></a>
                 </p>
             </div>
             <div class="col-12 col-md-2">
                 <h5>Fale com a gente</h5>
-                <p>Precisa falar com a gente? envie sua mensagem <a class="text-decoration-none" href="suporte.html">
                         <i>Aqui!</i></a>
                 </p>
             </div>
@@ -126,16 +98,9 @@
                 <p>
                     Quer saber mais sobre a equipe idealizadora desse projeto?
                     <br>
-                    <a href="mini-currilo.html" class="text-decoration-none"><i>Clica aqui!</i></a>
                 </p>
             </div>
         </div>
-        <p class="text-white-50 text-center">
-            <a href="termos.html" class="text-decoration-none">Termos e condições</a>
-            &bull;
-            <a href="politicas.html" class="text-decoration-none">Políticas de privacidade</a>
-
-        </p>
         <p class="text-white-50 text-center">&copy; 2020 RPGZADA. - CNPJ
             00.000.000/0000-00 - São Paulo/SP - Brasil</p>
     </div>
