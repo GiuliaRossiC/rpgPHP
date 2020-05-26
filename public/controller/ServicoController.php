@@ -24,6 +24,8 @@ class ServicoController
                 return ['servico' => $servicos->unico($chave), 'erro' => $temErro];
             }
             $servicos->save($chave, $_POST);
+            //gambiarra pra funcionar la fora por conta da fila no server
+            sleep(3);
             header('Location: index.php?controller=servico&action=index');
         }
         return ['servico' => $servicos->unico($chave), 'erro' => []];
@@ -44,6 +46,8 @@ class ServicoController
                 return $temErro;
             }
             $servicos->save($_POST['codigo'], $_POST);
+            //gambiarra pra funcionar la fora por conta da fila no server
+            sleep(3);
             header('Location: index.php?controller=servico&action=index');
         }
     }
@@ -53,6 +57,8 @@ class ServicoController
         $chave = $_GET['codigo'];
         $servicos = new Servico();
         $servicos->apagar($chave);
+        //gambiarra pra funcionar la fora por conta da fila no server
+        sleep(3);
         header('Location: index.php?controller=servico&action=index');
     }
 }

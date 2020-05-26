@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">Home</a>
+                        <a class="nav-link" href="../../pagina-principal.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../sobre.html">O Jogo</a>
@@ -37,7 +37,7 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="index.php?controler=login&action=cadastro">Cadastre-se agora!</a>
+                        <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
@@ -90,7 +90,7 @@
                 <div class="card-footer text-center">
                     <label class="mg-t-10">Ainda não tem uma conta?
                         <br>
-                        <a href="index.php?controler=login&action=cadastro">
+                        <a href="index.php?controller=login&action=cadastro">
                             Cadastre-se agora!
                         </a>
                     </label>

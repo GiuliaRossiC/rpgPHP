@@ -23,10 +23,4 @@
     'missao' => 'aprender MMC',
     'materia' => 'matematica',
   ),
-    'equacoes' =>
-        array (
-            'codigo' => 'equacoes',
-            'missao' => 'aprender equacoes',
-            'materia' => 'matematica',
-        ),
 );
