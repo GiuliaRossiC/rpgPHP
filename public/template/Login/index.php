@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.php?controller=servico&action=index">
+            <a class="navbar-brand">
                 <img src="img/logo_rpg.png" class="img-fluid" width="60" height="45">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -23,16 +23,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?controller=servico&action=index">Home</a>
+                        <a class="nav-link" href="../../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">O Jogo</a>
+                        <a class="nav-link" href="../../sobre.html">O Jogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre_nos.html">A Empresa</a>
+                        <a class="nav-link" href="../../sobre_nos.html">A Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mini-currilo.html">Nossa equipe</a>
+                        <a class="nav-link" href="../../mini-currilo.html">Nossa equipe</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav  navbar-right">
@@ -104,7 +104,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3">
-                <a href="index.php?controller=servico&action=index">
+                <a>
                     <img class="mb-2 img-fluid" src="img/logo_rpg.png" alt="" width="40%"></a>
             </div>
             <div class="col-12 col-md-2">
@@ -123,7 +123,7 @@
             </div>
             <div class="col-12 col-md-2">
                 <h5>Fale com a gente</h5>
-                <p>Precisa falar com a gente? envie sua mensagem <a class="text-decoration-none" href="suporte.html">
+                <p>Precisa falar com a gente? envie sua mensagem <a class="text-decoration-none">
                         <i>Aqui!</i></a>
                 </p>
             </div>

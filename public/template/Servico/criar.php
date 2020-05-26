@@ -13,13 +13,29 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.php?controller=servico&action=index">
+            <a class="navbar-brand">
                 <img src="img/logo_rpg.png" class="img-fluid" width="60" height="45">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../sobre.html">O Jogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../sobre_nos.html">A Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../mini-currilo.html">Nossa equipe</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>

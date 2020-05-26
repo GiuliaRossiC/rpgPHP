@@ -1,10 +1,12 @@
 <html>
 <head>
-    <title>Sobre o School Hero</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/main.css">
-    <style type="text/css" id="cssIncorporado">
+        <title>Sobre o School Hero</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--TODOS OS SCRIPTS ESTÃO DENTRO DA PAGINA HTML _SCRIPTS.HTML, SENDO IMPORTADOS COM SASS!!!!!-->
+<style>
         .bg-gold {
             padding-top: 40px;
             padding-bottom: 40px;
@@ -24,7 +26,7 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand">
                 <img src="img/logo_rpg.png" class="img-fluid" width="60" height="45">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -48,10 +50,10 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="cadastro.html">Cadastre-se agora!</a>
+                        <a id="lblSessao" class="nav-link" href="index.php?controler=login&action=cadastro">Cadastre-se agora!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="iniciar-sessao.html">Iniciar Sessão</a>
+                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
                     </li>
                 </ul>
             </div>
@@ -77,7 +79,7 @@
                         Venha fazer parte
                         desta incrível aventura!
                     </p>
-                    <a href="iniciar-sessao.html" class="btn btn-primary">JOGUE DE GRAÇA</a>
+                    <a href="index.php?controller=login&action=index" class="btn btn-primary">JOGUE DE GRAÇA</a>
                 </div>
             </div>
         </div>
@@ -130,7 +132,7 @@
                     </p>
                 </div>
             </div>
-            <a href="#objetivos" class="btn btn-lg btn-primary">Nossos objetivos!</a>
+            <a  href="#objetivos" class="btn btn-lg btn-primary">Nossos objetivos!</a>
         </div>
     </section>
 
@@ -139,7 +141,7 @@
             <h2>
                 Comece sua aventura agora!
             </h2>
-            <a href="iniciar-sessao.html" class="btn btn-primary">JOGUE DE GRAÇA</a>
+            <a  href="index.php?controller=login&action=index" class="btn btn-primary">JOGUE DE GRAÇA</a>
         </div>
     </section>
 
@@ -154,13 +156,13 @@
         <div class="row">
             <div class="col-md-4">
     <div class="card mb-4 shadow-sm">
-        <a href="artigo-noticia.html">
+        <a >
             <img src="img/assassinclass.jpeg" width="100%" height="225">
         </a>
         <div class="card-body">
             <p class="card-text">A classe <u>assassino</u> foi adicionada!</p>
             <div class="d-flex justify-content-between align-items-center">
-                <a href="#" style="text-decoration: none; color: black">
+                <a  href="#" style="text-decoration: none; color: black">
                     <i class="fa fa-heart" style="color: red"></i> 34</a>
                 <small class="text-muted">9 mins</small>
             </div>
@@ -170,13 +172,13 @@
 
             <div class="col-md-4">
     <div class="card mb-4 shadow-sm">
-        <a href="artigo-noticia.html">
+        <a>
             <img src="img/assassinclass.jpeg" width="100%" height="225">
         </a>
         <div class="card-body">
             <p class="card-text">A classe <u>assassino</u> foi adicionada!</p>
             <div class="d-flex justify-content-between align-items-center">
-                <a href="#" style="text-decoration: none; color: black">
+                <a  href="#" style="text-decoration: none; color: black">
                     <i class="fa fa-heart" style="color: red"></i> 34</a>
                 <small class="text-muted">9 mins</small>
             </div>
@@ -186,13 +188,13 @@
 
             <div class="col-md-4">
     <div class="card mb-4 shadow-sm">
-        <a href="artigo-noticia.html">
+        <a>
             <img src="img/assassinclass.jpeg" width="100%" height="225">
         </a>
         <div class="card-body">
             <p class="card-text">A classe <u>assassino</u> foi adicionada!</p>
             <div class="d-flex justify-content-between align-items-center">
-                <a href="#" style="text-decoration: none; color: black">
+                <a  href="#" style="text-decoration: none; color: black">
                     <i class="fa fa-heart" style="color: red"></i> 34</a>
                 <small class="text-muted">9 mins</small>
             </div>
@@ -229,7 +231,7 @@
                 </ol>
             </a>
             <div class="text-center">
-                <a href="cadastro.html" class="btn btn-primary">COMECE A JOGAR AGORA</a>
+                <a href="index.php?controller=login&action=index" class="btn btn-primary">COMECE A JOGAR AGORA</a>
             </div>
         </div>
     </section>
@@ -239,12 +241,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3">
-                <a href="index.html">
+                <a>
                     <img class="mb-2 img-fluid" src="img/logo_rpg.png" alt="" width="40%"></a>
             </div>
             <div class="col-12 col-md-2">
                 <h5>Sobre a School Hero</h5>
-                <p>Quer saber mais sobre o jogo?<a class="text-decoration-none" href="sobre.html">
+                <p>Quer saber mais sobre o jogo?<a class="text-decoration-none">
                     <i>Clica aqui!</i></a>
                 </p>
             </div>
@@ -253,12 +255,12 @@
                 <p>
                     Para saber mais sobre nossa empresa?
                     <br>
-                    <a class="text-decoration-none" href="sobre_nos.html"><i>Clica aqui!</i></a>
+                    <a class="text-decoration-none"><i>Clica aqui!</i></a>
                 </p>
             </div>
             <div class="col-12 col-md-2">
                 <h5>Fale com a gente</h5>
-                <p>Precisa falar com a gente? envie sua mensagem <a class="text-decoration-none" href="suporte.html">
+                <p>Precisa falar com a gente? envie sua mensagem <a class="text-decoration-none" >
                     <i>Aqui!</i></a>
                 </p>
             </div>
@@ -267,14 +269,14 @@
                 <p>
                     Quer saber mais sobre a equipe idealizadora desse projeto?
                     <br>
-                    <a href="mini-currilo.html" class="text-decoration-none"><i>Clica aqui!</i></a>
+                    <a class="text-decoration-none"><i>Clica aqui!</i></a>
                 </p>
             </div>
         </div>
         <p class="text-white-50 text-center">
-            <a href="termos.html" class="text-decoration-none">Termos e condições</a>
+            <a class="text-decoration-none">Termos e condições</a>
             &bull;
-            <a href="politicas.html" class="text-decoration-none">Políticas de privacidade</a>
+            <a  class="text-decoration-none">Políticas de privacidade</a>
 
         </p>
         <p class="text-white-50 text-center">&copy; 2020 RPGZADA. - CNPJ

@@ -13,6 +13,9 @@ if (!$login->estaLogado() && $controller!='Login') {
     $controller = 'Login';
     $action = 'index';
     echo "Acesso não autorizado";
+}elseif ($login->estaLogado() && $controller=='Login' && $action!='sair'){
+    $controller = 'Servico';
+    $action = 'index';
 }
 
 $controllerName = "{$controller}Controller";
