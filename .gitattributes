@@ -1,3 +1,1 @@
 rpgPHP/public/*.html linguist-vendored
-*.html linguist-vendored=false
-*.php linguist-detectable=true
