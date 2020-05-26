@@ -1,4 +1,4 @@
-<form action="index.php?controller=usuario&action=criar" method="Post">
+<form method="Post">
     <div style="margin: 10px">
         <label>Usuario</label>
         <input name="usuario">
@@ -104,6 +104,7 @@
         ?>
     </div>
     <div style="margin: 10px">
+        <label>Aceito os termos</label>
         <input name="actCadastro" type="checkbox" class="form-check-input" id="aceitaCadastro">
         <?php
         if (isset($data['actCadastro']))

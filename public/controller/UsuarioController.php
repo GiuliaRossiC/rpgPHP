@@ -10,10 +10,9 @@ class UsuarioController
         return $usuarios->todos();
     }
 
-    public function criar()
+    public function criar($redirect='index.php?controller=usuario&action=index')
     {
         if ($_POST) {
-            var_dump($_POST);
             $usuarios = new Usuario();
             $temErro = [];
             if(empty($_POST['usuario'])){
@@ -54,7 +53,7 @@ class UsuarioController
             }
             if (empty($temErro)) {
                 $usuarios->save($_POST['codigo'], $_POST);
-                header('Location: index.php?controller=usuario&action=index');
+                header("Location:$redirect");
             }
             return $temErro;
         }

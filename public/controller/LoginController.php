@@ -1,6 +1,6 @@
 <?php
 require_once 'model/Login.php';
-
+require_once 'UsuarioController.php';
 //login
 class LoginController
 {
@@ -14,7 +14,7 @@ class LoginController
                 // redirect para o index controler
                 header('Location: index.php?controller=servico&action=index');
             } else {
-                echo "seu email ou sua senha estão incorretas!";
+                echo '<span style="color: red; margin-left: 20px">'.'seu email ou sua senha estão incorretas!'.'</span>';
             }
         }
     }
@@ -22,6 +22,10 @@ class LoginController
         $login = new Login();
         $login->sair();
         header('Location: index.php?controller=login&action=index');
+    }
+    public function cadastro(){
+        $cadastro = new UsuarioController();
+        return $cadastro->criar('index.php?controller=login&action=index');
     }
 }
 
