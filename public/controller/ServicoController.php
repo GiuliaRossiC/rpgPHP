@@ -43,8 +43,8 @@ class ServicoController
             if (!empty($temErro)) {
                 return $temErro;
             }
-                $servicos->save($_POST['codigo'], $_POST);
-                header('Location: index.php?controller=servico&action=index');
+            $servicos->save($_POST['codigo'], $_POST);
+            header('Location: index.php?controller=servico&action=index');
         }
     }
 

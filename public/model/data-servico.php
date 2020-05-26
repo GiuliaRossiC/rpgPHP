@@ -1,10 +1,4 @@
 <?php return array (
-  'sintaxe' => 
-  array (
-    'codigo' => 'sintaxe',
-    'missao' => 'aprender sintaxe',
-    'materia' => 'portugues',
-  ),
   'onomatopeia' => 
   array (
     'codigo' => 'onomatopeia',
@@ -26,7 +20,13 @@
   'mmc' => 
   array (
     'codigo' => 'mmc',
-    'missao' => 'aprender mmc',
+    'missao' => 'aprender MMC',
     'materia' => 'matematica',
   ),
+    'equacoes' =>
+        array (
+            'codigo' => 'equacoes',
+            'missao' => 'aprender equacoes',
+            'materia' => 'matematica',
+        ),
 );

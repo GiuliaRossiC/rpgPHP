@@ -27,11 +27,11 @@ class UsuarioController
             if(empty($_POST['senha'])){
                 $temErro['senha'] = "Digite uma senha.";
             }
-            if(empty($_POST['confirmarSenha'])){
+            if(($_POST['confirmarSenha']) != $_POST['senha']){
                 $temErro['confirmarSenha'] = "As senhas não conferem.";
             }
             if(empty($_POST['dataNascimento'])){
-                $temErro['dataNascimento'] = "As senhas não conferem.";
+                $temErro['dataNascimento'] = "Digite sua data.";
             }
             if(!isset($_POST['sexo']) ||($_POST['sexo'] != "masculino" && $_POST['sexo'] != "feminino")){
                 $temErro['sexo'] = "Escolha seu sexo.";
