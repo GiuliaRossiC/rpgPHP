@@ -1,3 +1,6 @@
+<?php require 'model/login.php';
+$login = new Login();
+?>
 <html>
 <head>
     <title>Iniciar sessão</title>
@@ -28,23 +31,32 @@
                         <a class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">O Jogo</a>
+                        <a class="nav-link" href="sobre.php">O Jogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre_nos.html">A Empresa</a>
+                        <a class="nav-link" href="sobre_nos.php">A Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mini-currilo.html">Nossa equipe</a>
+                        <a class="nav-link" href="mini-currilo.php">Nossa equipe</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav  navbar-right">
-                    <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
-                    </li>
-                </ul>
+                <?php
+                if(!$login->estaLogado()):?>
+                    <ul class="navbar-nav  navbar-right">
+                        <li class="nav-item">
+                            <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
+                        </li>
+                    </ul>
+                <?php else:?>
+                    <ul class="navbar-nav  navbar-right">
+                        <li class="nav-item">
+                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                        </li>
+                    </ul>
+                <?php endif ?>
             </div>
         </div>
     </nav>
@@ -76,7 +88,7 @@
             </div>
             <div class="col-12 col-md-2">
                 <h5>Sobre a School Hero</h5>
-                <p>Quer saber mais sobre o jogo?<a class="text-decoration-none" href="sobre.html">
+                <p>Quer saber mais sobre o jogo?<a class="text-decoration-none" href="sobre.php">
                     <i>Clica aqui!</i></a>
                 </p>
             </div>
@@ -85,7 +97,7 @@
                 <p>
                     Para saber mais sobre nossa empresa?
                     <br>
-                    <a class="text-decoration-none" href="sobre_nos.html"><i>Clica aqui!</i></a>
+                    <a class="text-decoration-none" href="sobre_nos.php"><i>Clica aqui!</i></a>
                 </p>
             </div>
             <div class="col-12 col-md-2">
@@ -99,7 +111,7 @@
                 <p>
                     Quer saber mais sobre a equipe idealizadora desse projeto?
                     <br>
-                    <a href="mini-currilo.html" class="text-decoration-none"><i>Clica aqui!</i></a>
+                    <a href="mini-currilo.php" class="text-decoration-none"><i>Clica aqui!</i></a>
                 </p>
             </div>
         </div>

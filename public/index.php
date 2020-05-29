@@ -1,9 +1,10 @@
 <?php
 // define qual o controller e action
 
-session_start();
+
 require 'model/Login.php';
 require 'view.php';
+define('ROOT_PATH', dirname(__FILE__));
 
 $controller = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Login';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';

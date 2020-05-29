@@ -21,6 +21,25 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagina-principal.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.php">O Jogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre_nos.php">A Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mini-currilo.php">Nossa equipe</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav  navbar-right">
+                    <li class="nav-item">
+                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

@@ -4,6 +4,11 @@ require 'Usuario.php';
 
 class Login
 {
+    public function __construct()
+    {
+        session_start();
+    }
+
     public function estaLogado()
     {
         // verificar $_SESSION['usuario']

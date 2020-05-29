@@ -1,3 +1,7 @@
+<?php require 'model/login.php';
+$login = new Login();
+?>
+
 <html>
 <head>
         <title>Sobre o School Hero</title>
@@ -36,26 +40,35 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="pagina-principal.html">Home</a>
+                        <a class="nav-link" href="pagina-principal.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">O Jogo</a>
+                        <a class="nav-link" href="sobre.php">O Jogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre_nos.html">A Empresa</a>
+                        <a class="nav-link" href="sobre_nos.php">A Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mini-currilo.html">Nossa equipe</a>
+                        <a class="nav-link" href="mini-currilo.php">Nossa equipe</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav  navbar-right">
-                    <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
-                    </li>
-                </ul>
+                <?php
+                if(!$login->estaLogado()):?>
+                    <ul class="navbar-nav  navbar-right">
+                        <li class="nav-item">
+                            <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
+                        </li>
+                    </ul>
+                <?php else:?>
+                    <ul class="navbar-nav  navbar-right">
+                        <li class="nav-item">
+                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                        </li>
+                    </ul>
+                <?php endif ?>
             </div>
         </div>
     </nav>
