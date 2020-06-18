@@ -73,11 +73,11 @@
                                         <td><?= $missao['materia'] ?></td>
                                         <td>
                                             <p>
-                                                <a href="index.php?controller=servico&action=alterar&codigo=<?= $missao['codigo'] ?>"
+                                                <a href="index.php?controller=servico&action=alterar&id=<?= $missao['id_servico'] ?>"
                                                    class="btn btn-primary">alterar</a>
                                             </p>
                                             <p>
-                                                <a href="index.php?controller=servico&action=apagar&codigo=<?= $missao['codigo'] ?>"
+                                                <a href="index.php?controller=servico&action=apagar&id=<?= $missao['id_servico'] ?>"
                                                    class="btn btn-primary">apagar</a>
                                             </p>
                                         </td>

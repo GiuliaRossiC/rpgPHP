@@ -7,7 +7,7 @@ class Usuario
     public function verificaLogin($email, $senha)
     {
         $data = new Data('usuario');
-        $usuario = $data->get($email);
+        $usuario = $data->getby('email', $email);
         if (empty($usuario)) {
             return false;
         } elseif ($usuario['senha'] !== $senha) {
@@ -50,6 +50,7 @@ class Usuario
     public function todos()
     {
         $data = new Data('usuario');
-        return $data->load();
+        $usuario = $data->getall();
+        return $usuario;
     }
 }

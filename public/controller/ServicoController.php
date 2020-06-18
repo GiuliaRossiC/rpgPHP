@@ -14,7 +14,7 @@ class ServicoController
     public function alterar()
     {
         $servicos = new Servico();
-        $chave = $_GET['codigo'];
+        $chave = $_GET['id'];
         if ($_POST) {
             $temErro = [];
             if (empty($_POST['missao'])) {
@@ -23,7 +23,7 @@ class ServicoController
             if (!empty($temErro)) {
                 return ['servico' => $servicos->unico($chave), 'erro' => $temErro];
             }
-            $servicos->save($chave, $_POST);
+            $servicos->save($_POST, $chave);
             //gambiarra pra funcionar la fora por conta da fila no server
             sleep(3);
             header('Location: index.php?controller=servico&action=index');
@@ -45,7 +45,7 @@ class ServicoController
             if (!empty($temErro)) {
                 return $temErro;
             }
-            $servicos->save($_POST['codigo'], $_POST);
+            $servicos->save($_POST);
             //gambiarra pra funcionar la fora por conta da fila no server
             sleep(3);
             header('Location: index.php?controller=servico&action=index');
@@ -54,7 +54,7 @@ class ServicoController
 
     public function apagar()
     {
-        $chave = $_GET['codigo'];
+        $chave = $_GET['id'];
         $servicos = new Servico();
         $servicos->apagar($chave);
         //gambiarra pra funcionar la fora por conta da fila no server

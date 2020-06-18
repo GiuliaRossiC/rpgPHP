@@ -81,7 +81,7 @@
                                     <div style="color: darkred;"><b><?=$data['materia']?></b></div>
                                 <?php endif ?>
                             </div>
-                            <button type="submit" class="btn btn-primary">salvar</button>
+                            <button type="submit" class="btn btn-primary" name="salvarNovaMissao" id="salvarNovaMissao">salvar</button>
                         </form>
 
                     </div>

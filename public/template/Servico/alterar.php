@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label>Código:</label>
                                 <input type="text" class="form-control" disabled="disabled" value="<?=$data['servico']['missao']?>">
-                                <input name="codigo" type="hidden" value="<?=$data['servico']['codigo']?>">
+                                <input name="codigo" type="hidden" value="<?=$data['servico']['id_servico']?>">
                             </div>
                             <div class="form-group">
                                 <label>missao:</label>
@@ -79,7 +79,7 @@
                                     <div style="color: darkred;"><b><?=$data['erro']['confirmarSenha']?></b></div>
                                 <?php endif ?>
                             </div>
-                            <button type="submit" class="btn btn-primary">salvar</button>
+                            <button type="submit" class="btn btn-primary" name="alterarMissao" id="alterarMissao">salvar</button>
                         </form>
 
                     </div>

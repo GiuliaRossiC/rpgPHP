@@ -24,10 +24,31 @@ class Data
         return [];
     }
 
+    public function getall()
+    {
+        $conexao = $this->getConnection();
+        $result = mysqli_query($conexao, "SELECT * FROM {$this->table}");
+        mysqli_close($conexao);
+        return $result;
+    }
+
+    public function getby($campo, $valor)
+    {
+        $conexao = $this->getConnection();
+        $result = mysqli_query($conexao, "SELECT * FROM {$this->table} WHERE $campo = '$valor'");
+        $result = mysqli_fetch_array($result);
+        mysqli_close($conexao);
+        return $result;
+    }
+
     public function get($chave)
     {
-        $conexao = mysqli_connect("127.0.0.1", "root", "");
-        $result = mysqli_query($conexao, "SELECT * FROM {$this->table} WHERE id_{$this->table} = $chave}");
+        $conexao = $this->getConnection();
+        $result = mysqli_query($conexao, "SELECT * FROM {$this->table} WHERE id_{$this->table} = $chave");
+        if ($result === false) {
+            throw new \RuntimeException('erro ao consultar dados:' . mysqli_error($conexao));
+        }
+        $result = mysqli_fetch_array($result);
         mysqli_close($conexao);
         return $result;
     }
@@ -42,17 +63,19 @@ class Data
                 . ") VALUES ('" . implode("', '", $dados) . "')";
             $result = mysqli_query($conexao, $insert);
             if ($result === false) {
-                throw new \RuntimeException('erro ao gravar usuario:' . mysqli_error($conexao));
+                throw new \RuntimeException('erro ao gravar dados:' . mysqli_error($conexao));
             }
         } else {
 
             $set = [];
             foreach ($dados as $key => $value) {
-                $set[] = "$key = '$value''";
+                $set[] = "$key = '$value'";
             }
-            $update = "UPDATE {$this->table} SET " . implode(', ', $set) . ' WHERE id_{$this->table} = $chave""';
-
+            $update = "UPDATE {$this->table} SET " . implode(', ', $set) . " WHERE id_{$this->table} = $chave";
             $result = mysqli_query($conexao, $update);
+            if ($result === false) {
+                throw new \RuntimeException('erro ao gravar dados:' . mysqli_error($conexao));
+            }
         }
 
     }
@@ -64,8 +87,11 @@ class Data
 
     public function apagar($chave)
     {
-        $conexao = mysqli_connect("127.0.0.1", "root", "");
+        $conexao = $this->getConnection();
         $result = mysqli_query($conexao, "DELETE FROM {$this->table} WHERE id_{$this->table} = $chave");
+        if ($result === false) {
+            throw new \RuntimeException('erro ao gravar dados:' . mysqli_error($conexao));
+        }
         mysqli_close($conexao);
         return $result;
     }
