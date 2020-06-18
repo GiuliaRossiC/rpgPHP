@@ -61,8 +61,8 @@
                             <div class="form-group">
                                 <label>Usuário:</label>
                                 <input type="text" name="usuario" class="form-control" id="InputUser">
-                                <?php if (isset($data['usuario'])):?>
-                                    <div style="color: darkred;"><b><?=$data['usuario']?></b></div>
+                                <?php if (isset($data['usuarios'])):?>
+                                    <div style="color: darkred;"><b><?=$data['usuarios']?></b></div>
                                 <?php endif ?>
                             </div>
                             <div class="form-row">

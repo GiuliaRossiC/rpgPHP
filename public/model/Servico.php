@@ -37,7 +37,6 @@ class Servico
     public function unico($chave)
     {
         $data = new Data('servico');
-        var_dump($chave);
         return $data->get($chave);
     }
 

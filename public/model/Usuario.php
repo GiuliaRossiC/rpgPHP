@@ -6,7 +6,7 @@ class Usuario
 
     public function verificaLogin($email, $senha)
     {
-        $data = new Data('usuario');
+        $data = new Data('usuarios');
         $usuario = $data->getby('email', $email);
         if (empty($usuario)) {
             return false;
@@ -22,7 +22,7 @@ class Usuario
         // validar se está tudo certo
         // ex isset($set['nome])
 
-        $data = new Data('usuario');
+        $data = new Data('usuarios');
         $data->save($set['email'], $set);
     }
 
@@ -31,7 +31,7 @@ class Usuario
         // usar data::load(usuario) verificar se existe e usar data::save(usuario)
         // $data = new data;
         // $data-> save(usuario);
-        $data = new Data('usuario');
+        $data = new Data('usuarios');
         $set = [
             'usuario'=>$dados['usuario'],
             'email'=>$dados['email'],
@@ -49,8 +49,14 @@ class Usuario
 
     public function todos()
     {
-        $data = new Data('usuario');
+        $data = new Data('usuarios');
         $usuario = $data->getall();
         return $usuario;
+    }
+
+    public function unico($chave)
+    {
+        $data = new Data('usuarios');
+        return $data->get($chave);
     }
 }

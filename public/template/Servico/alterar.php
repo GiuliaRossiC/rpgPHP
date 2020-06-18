@@ -59,8 +59,8 @@
                         <form method="post">
                             <div class="form-group">
                                 <label>Código:</label>
-                                <input type="text" class="form-control" disabled="disabled" value="<?=$data['servico']['missao']?>">
-                                <input name="codigo" type="hidden" value="<?=$data['servico']['id_servico']?>">
+                                <input type="text" class="form-control" disabled="disabled" value="<?=$data['servico']['codigo'];?>">
+                                <input name="codigo" type="hidden" value="<?=$data['servico']['id_servico'];?>">
                             </div>
                             <div class="form-group">
                                 <label>missao:</label>
