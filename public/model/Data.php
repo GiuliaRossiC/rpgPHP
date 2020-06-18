@@ -101,7 +101,7 @@ class Data
      */
     public function getConnection()
     {
-        $conexao = mysqli_connect("127.0.0.1", "root", "", "rpg");
+        $conexao = mysqli_connect(" mysql.school-hero.realejo.com.br", "schoolhero", "EoGFg4qW8v", "schoolhero");
         if ($conexao === false) {
             throw new \RuntimeException('nao foi possivel conectar');
         }
