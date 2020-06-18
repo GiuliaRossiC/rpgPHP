@@ -53,7 +53,7 @@ class UsuarioController
             }
 
             if (empty($temErro)) {
-                $usuarios->save($_POST['email'], $_POST);
+                $usuarios->save($_POST);
                 header("Location:$redirect");
             }
             return $temErro;

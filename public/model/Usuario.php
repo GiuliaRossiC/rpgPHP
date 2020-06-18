@@ -26,21 +26,25 @@ class Usuario
         $data->save($set['email'], $set);
     }
 
-    public function save($email, $senha)
+    public function save($dados, $chave = null)
     {
         // usar data::load(usuario) verificar se existe e usar data::save(usuario)
         // $data = new data;
         // $data-> save(usuario);
         $data = new Data('usuario');
-        $usuario = $data->get($email);
-
-        if (!empty($usuario)) {
-            return false;
-        } else {
-            $data->save($email, $senha);
-            return $email;
-        }
-
+        $set = [
+            'usuario'=>$dados['usuario'],
+            'email'=>$dados['email'],
+            'senha'=>$dados['senha'],
+            'data_nascimento'=>$dados['dataNascimento'],
+            'sexo'=>$dados['sexo'],
+            'estado_civil'=>$dados['estadoCivil'],
+            'telefone_residencial'=>$dados['telefoneResidencial'],
+            'telefone_celular'=>$dados['telefoneCelular'],
+            'endereco'=>$dados['endereco']
+        ];
+        $data->save($set, $chave);
+        return $dados;
     }
 
     public function todos()

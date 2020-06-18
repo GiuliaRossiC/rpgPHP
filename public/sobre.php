@@ -1,4 +1,4 @@
-<?php require 'model/login.php';
+<?php require 'model/Login.php';
 $login = new Login();
 ?>
 

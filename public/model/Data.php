@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Classe para salvar e ler os dados em disco
  */
@@ -7,11 +8,11 @@ class Data
     /**
      * @var string
      */
-    private $dataset;
+    private $table;
 
-    public function __construct($dataset)
+    public function __construct($table)
     {
-        $this->dataset = $dataset;
+        $this->table = $table;
     }
 
     public function load()
@@ -25,30 +26,60 @@ class Data
 
     public function get($chave)
     {
-        $dataset = $this->load();
-        if (isset($dataset[$chave])) {
-            return $dataset[$chave];
-        }
-        return null;
+        $conexao = mysqli_connect("127.0.0.1", "root", "");
+        $result = mysqli_query($conexao, "SELECT * FROM {$this->table} WHERE id_{$this->table} = $chave}");
+        mysqli_close($conexao);
+        return $result;
     }
 
-    public function save($chave, $dados)
+    public function save($dados, $chave = null)
     {
-        $dataset = $this->load();
-        $dataset[$chave] = $dados;
-        file_put_contents($this->getFilename(), '<'. '?php return ' . var_export($dataset, true) . ';');
+        $conexao = $this->getConnection();
+        $current = $chave ? $this->get($chave) : null;
+        if (empty($current)) {
+            $insert = "INSERT INTO {$this->table} ("
+                . implode(', ', array_keys($dados))
+                . ") VALUES ('" . implode("', '", $dados) . "')";
+            $result = mysqli_query($conexao, $insert);
+            if ($result === false) {
+                throw new \RuntimeException('erro ao gravar usuario:' . mysqli_error($conexao));
+            }
+        } else {
+
+            $set = [];
+            foreach ($dados as $key => $value) {
+                $set[] = "$key = '$value''";
+            }
+            $update = "UPDATE {$this->table} SET " . implode(', ', $set) . ' WHERE id_{$this->table} = $chave""';
+
+            $result = mysqli_query($conexao, $update);
+        }
+
     }
 
     public function getFilename()
     {
-        return __DIR__ . "/data-{$this->dataset}.php";
+        return __DIR__ . "/data-{$this->table}.php";
     }
 
     public function apagar($chave)
     {
-        $dataset = $this->load();
-        unset($dataset[$chave]);
-        file_put_contents($this->getFilename(), '<'. '?php return ' . var_export($dataset, true) . ';');
+        $conexao = mysqli_connect("127.0.0.1", "root", "");
+        $result = mysqli_query($conexao, "DELETE FROM {$this->table} WHERE id_{$this->table} = $chave");
+        mysqli_close($conexao);
+        return $result;
+    }
+
+    /**
+     * @return false|mysqli
+     */
+    public function getConnection()
+    {
+        $conexao = mysqli_connect("127.0.0.1", "root", "", "rpg");
+        if ($conexao === false) {
+            throw new \RuntimeException('nao foi possivel conectar');
+        }
+        return $conexao;
     }
 
 }

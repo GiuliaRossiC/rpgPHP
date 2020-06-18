@@ -174,7 +174,7 @@
                                     <div style="color: darkred;"><b><?=$data['actCadastro']?></b></div>
                                 <?php endif ?>
                             </div>
-                            <button type="submit" class="btn btn-block btn-primary mt-2" id="btnCadastrar">Cadastrar
+                            <button type="submit" class="btn btn-block btn-primary mt-2" id="btnCadastrar" name="btnCadastrar">Cadastrar
                             </button>
                         </form>
                     </div>
