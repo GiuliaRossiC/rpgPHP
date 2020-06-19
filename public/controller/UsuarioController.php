@@ -18,9 +18,19 @@ class UsuarioController
             $temErro = [];
             if (empty($_POST['usuario'])) {
                 $temErro['usuario'] = "Digite um usuário.";
+            }else {
+                $existe = $usuarios->unicoPorCampo('usuario', $_POST['usuario']);
+                if (!empty($existe)) {
+                    $temErro['usuario'] = "Este usuário já está cadastrado";
+                }
             }
             if (empty($_POST['email'])) {
                 $temErro['email'] = "Digite um email.";
+            }else {
+                $existe = $usuarios->unicoPorCampo('email', $_POST['email']);
+                if (!empty($existe)) {
+                    $temErro['email'] = "Este email já está cadastrado";
+                }
             }
             if ($_POST['confirmarEmail'] != $_POST['email']) {
                 $temErro['confirmarEmail'] = "Os emails digitados não conferem.";
@@ -62,13 +72,17 @@ class UsuarioController
                 $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'numerosprimos', 'missao'=>'aprender numeros primos', 'materia' => 'matematica']);
                 $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'funcao', 'missao'=>'aprender função de 1 grau', 'materia' => 'matematica']);
                 $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'mmc', 'missao'=>'aprender MMC',  'materia' => 'matematica']);
-                header("Location:$redirect");
+                $cadastrado = $_POST;
+                $cadastrado['cadastrado'] = true;
+                return $cadastrado;
             }
+
+            $temErro['cadastrado'] = false;
             return $temErro;
         }
     }
 
-    public function alterar()
+/*    public function alterar()
     {
         $usuario = new Usuario();
         $chave = $_GET['id'];
@@ -87,6 +101,6 @@ class UsuarioController
 
             return $temErro;
         }
-    }
+    }*/
 }
 

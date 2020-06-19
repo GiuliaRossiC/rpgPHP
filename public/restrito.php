@@ -1,4 +1,8 @@
 <?php
+/**
+ * Classe equivalente a index.php do MVC, precisou ser alterado seu nome para que o php root pegasse a pagina
+ * inicial do projeto realmente.
+ */
 // define qual o controller e action
 error_reporting(E_ALL);
 ini_set('display_errors', true);

@@ -1,3 +1,5 @@
+<?php
+?>
 <html>
 <head>
     <title>Cadastro</title>
@@ -55,14 +57,42 @@
             <div class="cadastro-card card my-5 shadow-sm">
                 <div class="card-body">
                     <div class="card-text">
+                        <?php if ($data['cadastrado']):?>
+                            <div class="text-center">
+                                <h1>Cadastro finalizado com sucesso!</h1>
+                            </div>
+                            <div class="text-center">
+                                <a class="btn btn-primary" href="restrito.php?controller=login&action=index">Clique aqui para acessar
+                                    sua conta!</a><br><br><br>
+                            </div>
+                            <div>
+                                <h2 class="text-center">Confira os dados inseridos em seu cadastro:</h2>
+                        <label>Usuario:</label>
+                            <?=$data['usuario'] ?><br>
+                            <label>Email:</label>
+                            <?=$data['email'] ?><br>
+                            <label>Senha:</label>
+                            <?=$data['senha'] ?><br>
+                            <label>Data de Nascimento:</label>
+                            <?=$data['dataNascimento'] ?><br>
+                            <label>Estado Civil:</label>
+                            <?=$data['estadoCivil'] ?><br>
+                            <label>Telefone Residencial:</label>
+                            <?=$data['telefoneResidencial'] ?><br>
+                            <label>Telefone Celular:</label>
+                            <?=$data['telefoneCelular'] ?><br>
+                            <label>Endereço:</label>
+                            <?=$data['endereco'] ?><br>
+                        </div>
+                        <?php else:?>
                         <form method="post" id="formCadastro">
                             <h1 class="text-center">Cadastre-se agora!</h1>
                             <hr/>
                             <div class="form-group">
                                 <label>Usuário:</label>
                                 <input type="text" name="usuario" class="form-control" id="InputUser">
-                                <?php if (isset($data['usuarios'])):?>
-                                    <div style="color: darkred;"><b><?=$data['usuarios']?></b></div>
+                                <?php if (isset($data['usuario'])):?>
+                                    <div style="color: darkred;"><b><?=$data['usuario']?></b></div>
                                 <?php endif ?>
                             </div>
                             <div class="form-row">
@@ -140,7 +170,6 @@
                                     <div style="color: darkred;"><b><?=$data['estadoCivil']?></b></div>
                                 <?php endif ?>
                                 </div>
-                            </div>
                             <div class="form-row">
                                 <div class="form-group col-12 col-sm-6">
                                     <label>Telefone Residencial</label>
@@ -166,7 +195,6 @@
                                     <div style="color: darkred;"><b><?=$data['endereco']?></b></div>
                                 <?php endif ?>
                                 </div>
-                            </div>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="actCadastro" name="actCadastro">
                                 <label class="form-check-label" for="actCadastro">Aceito os termos</label>
@@ -177,6 +205,7 @@
                             <button type="submit" class="btn btn-block btn-primary mt-2" id="btnCadastrar" name="btnCadastrar">Cadastrar
                             </button>
                         </form>
+                        <?php endif?>
                     </div>
                 </div>
             </div>

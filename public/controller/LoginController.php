@@ -25,9 +25,9 @@ class LoginController
     }
 
     public function cadastro(){
-        $cadastro = new UsuarioController();
-        return $cadastro->criar('cadastroSucesso.php');
-    }
+    $cadastro = new UsuarioController();
+    return $cadastro->criar();
+}
 }
 
 ?>
