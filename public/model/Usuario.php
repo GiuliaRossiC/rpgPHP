@@ -59,4 +59,11 @@ class Usuario
         $data = new Data('usuarios');
         return $data->get($chave);
     }
+
+    public function unicoPorCampo($campo, $valor)
+    {
+        $data = new Data('usuarios');
+        $usuario = $data->getby($campo, $valor);
+        return $usuario;
+    }
 }

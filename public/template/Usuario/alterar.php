@@ -37,7 +37,7 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                        <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=servico&action=index">Meu Perfil</a>
                     </li>
                 </ul>
             </div>

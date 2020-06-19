@@ -8,7 +8,7 @@ class ServicoController
     public function index()
     {
         $servicos = new Servico();
-        return $servicos->todos();
+        return $servicos->todosDoUsuario((new Login())->getUsuarioID());
     }
 
     public function alterar()
@@ -26,7 +26,7 @@ class ServicoController
             $servicos->save($_POST, $chave);
             //gambiarra pra funcionar la fora por conta da fila no server
             sleep(3);
-            header('Location: index.php?controller=servico&action=index');
+            header('Location: restrito.php?controller=servico&action=index');
         }
         return ['servico' => $servicos->unico($chave), 'erro' => []];
     }
@@ -48,7 +48,7 @@ class ServicoController
             $servicos->save($_POST);
             //gambiarra pra funcionar la fora por conta da fila no server
             sleep(3);
-            header('Location: index.php?controller=servico&action=index');
+            header('Location: restrito.php?controller=servico&action=index');
         }
     }
 
@@ -59,7 +59,7 @@ class ServicoController
         $servicos->apagar($chave);
         //gambiarra pra funcionar la fora por conta da fila no server
         sleep(3);
-        header('Location: index.php?controller=servico&action=index');
+        header('Location: restrito.php?controller=servico&action=index');
     }
 }
 

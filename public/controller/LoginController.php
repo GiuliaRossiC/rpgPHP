@@ -12,7 +12,7 @@ class LoginController
             $foi = $login->validarlogin($_POST['email'], $_POST['senha']);
             if ($foi) {
                 // redirect para o index controler
-                header('Location: index.php?controller=servico&action=index');
+                header('Location: restrito.php?controller=servico&action=index');
             } else {
                 return ['erro'=>'seu email ou sua senha estão incorretas!'];
             }
@@ -21,7 +21,7 @@ class LoginController
     public function sair(){
         $login = new Login();
         $login->sair();
-        header('Location: index.php?controller=login&action=index');
+        header('Location: restrito.php?controller=login&action=index');
     }
 
     public function cadastro(){

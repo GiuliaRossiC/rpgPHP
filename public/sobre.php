@@ -40,7 +40,7 @@ $login = new Login();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="pagina-principal.php">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sobre.php">O Jogo</a>
@@ -56,16 +56,16 @@ $login = new Login();
                 if(!$login->estaLogado()):?>
                     <ul class="navbar-nav  navbar-right">
                         <li class="nav-item">
-                            <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
+                            <a id="lblSessao" class="nav-link" href="restrito.php?controller=login&action=cadastro">Cadastre-se agora!</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
+                            <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=login&action=index">Iniciar Sessão</a>
                         </li>
                     </ul>
                 <?php else:?>
                     <ul class="navbar-nav  navbar-right">
                         <li class="nav-item">
-                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                            <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=servico&action=index">Meu Perfil</a>
                         </li>
                     </ul>
                 <?php endif ?>
@@ -92,7 +92,7 @@ $login = new Login();
                         Venha fazer parte
                         desta incrível aventura!
                     </p>
-                    <a href="index.php?controller=login&action=index" class="btn btn-primary">JOGUE DE GRAÇA</a>
+                    <a href="restrito.php?controller=login&action=index" class="btn btn-primary">JOGUE DE GRAÇA</a>
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@ $login = new Login();
             <h2>
                 Comece sua aventura agora!
             </h2>
-            <a  href="index.php?controller=login&action=index" class="btn btn-primary">JOGUE DE GRAÇA</a>
+            <a href="restrito.php?controller=login&action=index" class="btn btn-primary">JOGUE DE GRAÇA</a>
         </div>
     </section>
 
@@ -244,7 +244,7 @@ $login = new Login();
                 </ol>
             </a>
             <div class="text-center">
-                <a href="index.php?controller=login&action=index" class="btn btn-primary">COMECE A JOGAR AGORA</a>
+                <a href="restrito.php?controller=login&action=index" class="btn btn-primary">COMECE A JOGAR AGORA</a>
             </div>
         </div>
     </section>

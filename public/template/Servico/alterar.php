@@ -37,7 +37,7 @@
                 </ul>
                     <ul class="navbar-nav  navbar-right">
                         <li class="nav-item">
-                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                            <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=servico&action=index">Meu Perfil</a>
                         </li>
                     </ul>
             </div>
@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label>Código:</label>
                                 <input type="text" class="form-control" disabled="disabled" value="<?=$data['servico']['codigo'];?>">
-                                <input name="codigo" type="hidden" value="<?=$data['servico']['id_servico'];?>">
+                                <input name="codigo" type="hidden" value="<?=$data['servico']['codigo'];?>">
                             </div>
                             <div class="form-group">
                                 <label>missao:</label>
@@ -73,7 +73,7 @@
                                 <label>materia:</label>
                                 <select name="materia" class="form-control">
                                     <option value="portugues" <?php if ($data['servico']['materia'] == 'portugues') echo 'selected="selected"'?>>portugues</option>
-                                    <option value="matematica" <?php if ($data['servico']['materia'] == 'matematica') echo 'selected="selected"'?>>matemagica</option>
+                                    <option value="matematica" <?php if ($data['servico']['materia'] == 'matematica') echo 'selected="selected"'?>>matematica</option>
                                 </select>
                                 <?php if (isset($data['erro']['confirmarSenha'])):?>
                                     <div style="color: darkred;"><b><?=$data['erro']['confirmarSenha']?></b></div>

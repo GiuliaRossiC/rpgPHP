@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../pagina-principal.php">Home</a>
+                        <a class="nav-link" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../sobre.php">O Jogo</a>
@@ -37,10 +37,10 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
+                        <a id="lblSessao" class="nav-link" href="restrito.php?controller=login&action=cadastro">Cadastre-se agora!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
+                        <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=login&action=index">Iniciar Sessão</a>
                     </li>
                 </ul>
             </div>

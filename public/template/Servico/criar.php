@@ -37,7 +37,7 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                        <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=servico&action=index">Meu Perfil</a>
                     </li>
                 </ul>
             </div>
@@ -56,7 +56,7 @@
                     <h1 class="card-title text-center">Criar nova missão</h1>
                     <hr/>
                     <div class="card-text">
-                        <form action="index.php?controller=servico&action=criar" method="Post">
+                        <form action="restrito.php?controller=servico&action=criar" method="Post">
                             <div class="form-group">
                                 <label>codigo:</label>
                                 <input type="text" class="form-control" id="codigo" name="codigo">

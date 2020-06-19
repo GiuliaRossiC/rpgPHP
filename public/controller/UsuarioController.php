@@ -1,5 +1,6 @@
 <?php
 require_once 'model/Usuario.php';
+require_once 'model/Servico.php';
 
 //cadastro
 class UsuarioController
@@ -10,7 +11,7 @@ class UsuarioController
         return $usuarios->todos();
     }
 
-    public function criar($redirect = 'index.php?controller=usuario&action=index')
+    public function criar($redirect = 'restrito.php?controller=usuario&action=index')
     {
         if ($_POST) {
             $usuarios = new Usuario();
@@ -54,6 +55,13 @@ class UsuarioController
 
             if (empty($temErro)) {
                 $usuarios->save($_POST);
+                $usuario = $usuarios->unicoPorCampo('usuario', $_POST['usuario']);
+                $servico = new Servico();
+                $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'onomatopeia', 'missao'=>'aprender onomatopeia', 'materia' => 'portugues']);
+                $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'fibonacci', 'missao'=>'aprender fibonacci', 'materia' => 'matematica']);
+                $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'numerosprimos', 'missao'=>'aprender numeros primos', 'materia' => 'matematica']);
+                $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'funcao', 'missao'=>'aprender função de 1 grau', 'materia' => 'matematica']);
+                $servico->criar(['id_usuario'=>$usuario['id_usuario'],'codigo'=> 'mmc', 'missao'=>'aprender MMC',  'materia' => 'matematica']);
                 header("Location:$redirect");
             }
             return $temErro;
@@ -73,10 +81,9 @@ class UsuarioController
                 return ['usuario' => $usuario->unico($chave), 'erro' => $temErro];
             }
             $usuario->save($_POST, $chave);
-            var_dump($usuario);
             //gambiarra pra funcionar la fora por conta da fila no server
             sleep(3);
-            header('Location: index.php?controller=usuario&action=index');
+            header('Location: restrito.php?controller=usuario&action=index');
 
             return $temErro;
         }

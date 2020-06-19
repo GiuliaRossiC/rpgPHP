@@ -37,9 +37,9 @@
                 <td><?=$usuario['telefone_celular']?></td>
                 <td><?=$usuario['endereco']?></td>
                 <td style="float: right">
-                    <a href="index.php?controller=usuario&action=alterar&id=<?= $usuario['id_usuario']?>">alterar</a>
+                    <a href="restrito.php?controller=usuario&action=alterar&id=<?= $usuario['id_usuario']?>">alterar</a>
                     <br>ou<br>
-                    <a href="index.php?controller=usuario&action=apagar&id=<?=$usuario['id_usuario']?>">apagar</a>
+                    <a href="restrito.php?controller=usuario&action=apagar&id=<?=$usuario['id_usuario']?>">apagar</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -48,5 +48,5 @@
 <?php else: ?>
 <?php endif ?>
 
-<a href="index.php?controller=usuario&action=criar">novo usuario</a>
+<a href="restrito.php?controller=usuario&action=criar">novo usuario</a>
 

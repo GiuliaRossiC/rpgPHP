@@ -11,6 +11,11 @@ class Login
         }
     }
 
+    public function getUsuarioID(){
+        if($this->estaLogado()){
+            return $_SESSION['usuario']['id_usuario'];
+        }
+    }
     public function estaLogado()
     {
         // verificar $_SESSION['usuario']
@@ -27,7 +32,7 @@ class Login
         if ($usuario === false) {
             return false;
         }
-        $_SESSION['usuario'] = $email;
+        $_SESSION['usuario'] = $usuario;
         return $usuario;
     }
 

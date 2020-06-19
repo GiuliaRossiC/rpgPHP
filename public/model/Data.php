@@ -24,11 +24,17 @@ class Data
         return [];
     }
 
-    public function getall()
+    public function getall($chave = null)
     {
+        if(!empty($chave)){
+            $conexao = $this->getConnection();
+            $result = mysqli_query($conexao, "SELECT * FROM {$this->table} WHERE id_{$this->table} = $chave");
+            mysqli_close($conexao);
+        }else{
         $conexao = $this->getConnection();
         $result = mysqli_query($conexao, "SELECT * FROM {$this->table}");
         mysqli_close($conexao);
+    }
         return $result;
     }
 
@@ -37,6 +43,14 @@ class Data
         $conexao = $this->getConnection();
         $result = mysqli_query($conexao, "SELECT * FROM {$this->table} WHERE $campo = '$valor'");
         $result = mysqli_fetch_array($result);
+        mysqli_close($conexao);
+        return $result;
+    }
+
+    public function getAllBy($campo, $valor)
+    {
+        $conexao = $this->getConnection();
+        $result = mysqli_query($conexao, "SELECT * FROM {$this->table} WHERE $campo = '$valor'");
         mysqli_close($conexao);
         return $result;
     }
@@ -101,7 +115,7 @@ class Data
      */
     public function getConnection()
     {
-        $conexao = mysqli_connect(" mysql.school-hero.realejo.com.br", "schoolhero", "EoGFg4qW8v", "schoolhero");
+        $conexao = mysqli_connect("mysql.school-hero.realejo.com.br", "schoolhero", "EoGFg4qW8v", "schoolhero");
         if ($conexao === false) {
             throw new \RuntimeException('nao foi possivel conectar');
         }

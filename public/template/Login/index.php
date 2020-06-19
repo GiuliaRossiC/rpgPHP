@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../pagina-principal.php">Home</a>
+                        <a class="nav-link" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../sobre.php">O Jogo</a>
@@ -37,10 +37,10 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
+                        <a id="lblSessao" class="nav-link" href="restrito.php?controller=login&action=cadastro">Cadastre-se agora!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
+                        <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=login&action=index">Iniciar Sessão</a>
                     </li>
                 </ul>
             </div>
@@ -59,7 +59,7 @@
                     <h1 class="card-title text-center">Iniciar Sessão</h1>
                     <hr/>
                     <div class="card-text">
-                        <form action="/index.php?controller=login&action=index" method="post" id="formLogin" style="margin:15px">
+                        <form action="/restrito.php?controller=login&action=index" method="post" id="formLogin" style="margin:15px">
                             <?php if (isset($data['erro'])):?>
                             <div id="invalidEmailLogin" style="color: darkred; font-weight: bold">
                                 <?=$data['erro']?>
@@ -90,7 +90,7 @@
                 <div class="card-footer text-center">
                     <label class="mg-t-10">Ainda não tem uma conta?
                         <br>
-                        <a href="index.php?controller=login&action=cadastro">
+                        <a href="restrito.php?controller=login&action=cadastro">
                             Cadastre-se agora!
                         </a>
                     </label>

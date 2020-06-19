@@ -37,7 +37,7 @@
                 </ul>
                 <ul class="navbar-nav  navbar-right">
                     <li class="nav-item">
-                        <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                        <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=servico&action=index">Meu Perfil</a>
                     </li>
                 </ul>
             </div>
@@ -73,11 +73,11 @@
                                         <td><?= $missao['materia'] ?></td>
                                         <td>
                                             <p>
-                                                <a href="index.php?controller=servico&action=alterar&id=<?= $missao['id_servico'] ?>"
+                                                <a href="restrito.php?controller=servico&action=alterar&id=<?= $missao['id_servico'] ?>"
                                                    class="btn btn-primary">alterar</a>
                                             </p>
                                             <p>
-                                                <a href="index.php?controller=servico&action=apagar&id=<?= $missao['id_servico'] ?>"
+                                                <a href="restrito.php?controller=servico&action=apagar&id=<?= $missao['id_servico'] ?>"
                                                    class="btn btn-primary">apagar</a>
                                             </p>
                                         </td>
@@ -88,8 +88,8 @@
                         <?php else: ?>
                         <?php endif ?>
 
-                        <a href="index.php?controller=servico&action=criar" class="btn btn-primary">nova missao</a>
-                        <a href="index.php?controller=login&action=sair" class="btn btn-primary">Logout</a>
+                        <a href="restrito.php?controller=servico&action=criar" class="btn btn-primary">nova missao</a>
+                        <a href="restrito.php?controller=login&action=sair" class="btn btn-primary">Logout</a>
 
 
                     </div>

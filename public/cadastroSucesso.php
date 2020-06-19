@@ -18,7 +18,7 @@ $login = new Login();
 <header>
     <nav class="navbar navbar-expand-sm bg-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.php?controller=servico&action=index">
+            <a class="navbar-brand" href="restrito.php?controller=servico&action=index">
                 <img src="img/logo_rpg.png" class="img-fluid" width="60" height="45">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -44,16 +44,16 @@ $login = new Login();
                 if(!$login->estaLogado()):?>
                     <ul class="navbar-nav  navbar-right">
                         <li class="nav-item">
-                            <a id="lblSessao" class="nav-link" href="index.php?controller=login&action=cadastro">Cadastre-se agora!</a>
+                            <a id="lblSessao" class="nav-link" href="restrito.php?controller=login&action=cadastro">Cadastre-se agora!</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=login&action=index">Iniciar Sessão</a>
+                            <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=login&action=index">Iniciar Sessão</a>
                         </li>
                     </ul>
                 <?php else:?>
                     <ul class="navbar-nav  navbar-right">
                         <li class="nav-item">
-                            <a class="btn btn-secondary" class="nav-link" href="index.php?controller=servico&action=index">Meu Perfil</a>
+                            <a class="btn btn-secondary" class="nav-link" href="restrito.php?controller=servico&action=index">Meu Perfil</a>
                         </li>
                     </ul>
                 <?php endif ?>
@@ -71,7 +71,7 @@ $login = new Login();
                         <h1>Cadastro finalizado com sucesso!</h1>
                     </div>
                     <div class="text-center">
-                        <a class="btn btn-primary" href="index.php?controller=login&action=index">Clique aqui para acessar
+                        <a class="btn btn-primary" href="restrito.php?controller=login&action=index">Clique aqui para acessar
                             sua conta!</a>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ $login = new Login();
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3">
-                <a href="index.php?controller=servico&action=index">
+                <a href="restrito.php?controller=servico&action=index">
                     <img class="mb-2 img-fluid" src="img/logo_rpg.png" alt="" width="40%"></a>
             </div>
             <div class="col-12 col-md-2">
